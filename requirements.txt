@@ -1,0 +1,11 @@
+flask
+flask-cors
+torch
+torchvision
+numpy
+pillow
+opencv-python-headless
+werkzeug
+pytorch-grad-cam
+reportlab
+gunicorn
