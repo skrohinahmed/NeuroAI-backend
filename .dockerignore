@@ -1,0 +1,11 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pth
+venv/
+.env
+uploads/
+outputs/
+model_cache/
