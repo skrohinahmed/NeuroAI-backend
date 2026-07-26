@@ -36,7 +36,7 @@ from reportlab.lib.pagesizes import letter
 # =========================================
 # CONFIG
 # =========================================
-MODEL_PATH = "model/best_resnet18.pth"
+MODEL_PATH = "https://huggingface.co/skrohinahmed/37braintumormrimodel/resolve/main/best_resnet18.pth"
 
 UPLOAD_FOLDER = "uploads"
 OUTPUT_FOLDER = "outputs"
@@ -71,7 +71,18 @@ class MyResNet18(nn.Module):
 # =========================================
 # LOAD CHECKPOINT
 # =========================================
-checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
+MODEL_FILE = "./model_cache/best_resnet18.pth"
+if os.path.exists(MODEL_FILE):
+    print("Loading cached model...")
+    checkpoint = torch.load(MODEL_FILE, map_location=DEVICE)
+else:
+    print("Downloading model...")
+    checkpoint = torch.hub.load_state_dict_from_url(
+        MODEL_PATH,
+        model_dir="./model_cache",
+        map_location=DEVICE,
+        progress=True
+    )
 classes = checkpoint["classes"]
 
 model = MyResNet18(num_classes=len(classes)).to(DEVICE)
