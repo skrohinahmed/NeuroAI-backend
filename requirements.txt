@@ -6,6 +6,6 @@ numpy
 pillow
 opencv-python-headless
 werkzeug
-pytorch-grad-cam
+grad-cam
 reportlab
 gunicorn
