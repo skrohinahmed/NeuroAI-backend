@@ -1,7 +1,5 @@
 flask
 flask-cors
-torch
-torchvision
 numpy
 pillow
 opencv-python-headless
@@ -9,3 +7,7 @@ werkzeug
 grad-cam
 reportlab
 gunicorn
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision

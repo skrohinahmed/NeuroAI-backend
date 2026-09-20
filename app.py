@@ -45,7 +45,7 @@ IMG_SIZE = 64
 UNKNOWN_THRESHOLD = 0.55
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "bmp"}
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = torch.device("cpu")
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
